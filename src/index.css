@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Tajawal:wght@200;300;400;500;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@theme {
+  --font-arabic: "Cairo", "Tajawal", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --color-primary: #0A2540;
+  --color-secondary: #3B82F6;
+  --color-accent: #EAB308;
+  --color-bg-light: #F8FAFC;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#F8FAFC] text-[#0A2540] overflow-x-hidden font-arabic;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-[#F8FAFC];
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-blue-200 rounded-full border-2 border-[#F8FAFC] hover:bg-blue-300 transition-all;
+  }
+
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+
+  .glass-dark {
+    @apply bg-[#0A2540]/5 backdrop-blur-md border border-[#0A2540]/10;
+  }
+}
+
+@layer utilities {
+  .text-glow-blue {
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+  }
+  
+  .bg-soft-gradient {
+    background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+  }
+}
